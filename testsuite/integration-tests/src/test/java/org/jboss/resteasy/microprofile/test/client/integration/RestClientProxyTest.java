@@ -54,6 +54,8 @@ import org.jboss.resteasy.microprofile.client.BuilderResolver;
 import org.jboss.resteasy.microprofile.test.client.integration.resource.HeaderPropagator;
 import org.jboss.resteasy.microprofile.test.client.integration.resource.HelloClient;
 import org.jboss.resteasy.microprofile.test.client.integration.resource.HelloResource;
+import org.jboss.resteasy.microprofile.test.client.integration.resource.MyInterceptor;
+import org.jboss.resteasy.microprofile.test.client.integration.resource.MyInterceptorBinding;
 import org.jboss.resteasy.microprofile.test.client.integration.resource.NgHTTP2;
 import org.jboss.resteasy.microprofile.test.util.IgnoreOnCi;
 import org.jboss.resteasy.microprofile.test.util.TestEnvironment;
@@ -86,7 +88,9 @@ public class RestClientProxyTest {
                         HeaderPropagator.class,
                         TestParamConverter.class,
                         TestParamConverterProvider.class,
-                        NgHTTP2.class)
+                        NgHTTP2.class,
+                        MyInterceptor.class,
+                        MyInterceptorBinding.class)
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 

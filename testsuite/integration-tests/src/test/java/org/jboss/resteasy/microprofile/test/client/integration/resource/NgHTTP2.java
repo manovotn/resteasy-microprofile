@@ -6,6 +6,7 @@ import jakarta.ws.rs.Path;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @RegisterRestClient
+@MyInterceptorBinding
 public interface NgHTTP2 {
     @GET
     @Path("httpbin/get")
